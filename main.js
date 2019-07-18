@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 var patsScore = 0;
 var nicksScore = 0;
-var gamePoint = 20;
+var gamePoint = 2;
 
 
 // code for the basic click function of the app
