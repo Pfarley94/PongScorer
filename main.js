@@ -1,8 +1,14 @@
-console.log('helloworld!')
+$(document).ready(function() {
+    $("#nickWins").hide();
+});
+$(document).ready(function() {
+    $("#patWins").hide();
+});
 
 var patsScore = 0;
 var nicksScore = 0;
 var gamePoint = 20;
+
 
 // code for the basic click function of the app
 $('#givePoint1').click(function () {
@@ -10,8 +16,14 @@ $('#givePoint1').click(function () {
         document.getElementById('patsCurrentScore').textContent = patsScore += 1
     } else {
         (patsScore > gamePoint)
-        $('#patWins').prepend('');
-
+        $('#patWins').show(hideNick)
+        function hideNick(){
+            $('#givePoint2').hide(statePatsVictory)
+            function statePatsVictory(){
+                $('#patsScoreText').text('Pat Wins!')
+            };
+        }
+        
     }
 });
 
@@ -21,14 +33,26 @@ $('#givePoint2').click(function () {
         
     } else {
         (nicksScore > gamePoint)
-        $('#nickWins').prepend('')
+        $('#nickWins').show(hidePat)
+        function hidePat(){
+            $('#givePoint1').hide(stateNicksVictory)
+            function stateNicksVictory(){
+                $('#nicksScoreText').text('Nick Wins!')
+            };
+        }
+        
     }
 });
+
+
+
 // // code for removing an accidental point
 // $('#givePoint1').dblclick(function () {
 //         document.getElementById('patsCurrentScore').textContent = patsScore -= 1
 
+
 // code for reloading the page before victory
+
 var pressHoldDuration = 100;
 // The item (or items) to press and hold on
 var item = document.querySelector("#");

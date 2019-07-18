@@ -1,5 +1,6 @@
 html, body{
     height: 100%;
+    overflow: hidden;
 }
 p{
     font-size: 8vw;
@@ -20,5 +21,12 @@ h6{
     height:50%;
     padding:0;
 
+
+}
+#patsWins{
+    height: 100%
+}
+#patsWinPic.card-img-top{
+    height:50%
 
 }
